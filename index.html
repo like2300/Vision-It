@@ -136,6 +136,8 @@
         width: 24px;
       }
     </style>
+
+ 
   </head>
   <body x-data="{ 
     mobileMenuOpen: false, 
@@ -253,7 +255,7 @@
         </div>
         <ul class="hidden sm:flex gap-3 md:gap-5 lg:gap-10">
           <li class="uppercase font-bold text-xs text-white hover:text-[#1769c2] transition-colors">
-            <a href="#" aria-label="Page d'accueil">ACCUEIL</a>
+            <a href="/" aria-label="Page d'accueil">ACCUEIL</a>
           </li>
           <li class="uppercase font-bold text-xs text-white hover:text-[#1769c2] transition-colors">
             <a href="#services" aria-label="Découvrir nos services">SERVICES</a>
@@ -548,8 +550,121 @@
           </div>
         </section>
       </section>
+
+
+
+
+      <section id="services" class="bg-[#050e16] pb-6">  
+  <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+    <div class="container mx-auto px-6 p-6 bg-[#050e16]">
+
+      <div class="mb-16 text-center">
+        <h4 class="text-base text-[#1769c2] font-semibold tracking-wide uppercase">Nos atouts</h4>
+        <p class="mt-2 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+          Comment nous changeons la donne
+        </p>
+      </div>
+
+      <div class="flex flex-wrap my-12">
+
+        <div class="w-full border-b border-gray-800 md:w-1/2 md:border-r lg:w-1/3 p-8">
+          <div class="flex items-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20"
+              fill="currentColor" class="h-6 w-6 text-[#1769c2]">
+              <path
+                d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z">
+              </path>
+            </svg>
+            <div class="ml-4 text-xl text-white">Augmenter vos ventes</div>
+          </div>
+          <p class="leading-loose text-gray-400">
+            Des solutions technologiques conçues pour booster votre visibilité, votre efficacité et vos résultats.
+          </p>
+        </div>
+
+        <div class="w-full border-b border-gray-800 md:w-1/2 lg:w-1/3 lg:border-r p-8">
+          <div class="flex items-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20"
+              fill="currentColor" class="h-6 w-6 text-[#1769c2]">
+              <path
+                d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z">
+              </path>
+            </svg>
+            <div class="ml-4 text-xl text-white">Prêt pour l’entreprise</div>
+          </div>
+          <p class="leading-loose text-gray-400">
+            Des outils robustes, sécurisés et évolutifs, adaptés aux exigences des entreprises de toutes tailles.
+          </p>
+        </div>
+
+        <div class="w-full border-b border-gray-800 md:w-1/2 md:border-r lg:w-1/3 lg:border-r-0 p-8">
+          <div class="flex items-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20"
+              fill="currentColor" class="h-6 w-6 text-[#1769c2]">
+              <path
+                d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z">
+              </path>
+            </svg>
+            <div class="ml-4 text-xl text-white">Croissance illimitée</div>
+          </div>
+          <p class="leading-loose text-gray-400">
+            Nos solutions évoluent avec vous, pour vous accompagner à chaque étape de votre développement.
+          </p>
+        </div>
+
+        <div class="w-full border-b border-gray-800 md:w-1/2 lg:w-1/3 lg:border-r lg:border-b-0 p-8">
+          <div class="flex items-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20"
+              fill="currentColor" class="h-6 w-6 text-[#1769c2]">
+              <path
+                d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z">
+              </path>
+            </svg>
+            <div class="ml-4 text-xl text-white">Recommandé par les experts</div>
+          </div>
+          <p class="leading-loose text-gray-400">
+            Nos partenaires et clients témoignent de l’impact concret de nos solutions sur leurs activités.
+          </p>
+        </div>
+
+        <div class="w-full border-b border-gray-800 md:w-1/2 md:border-r md:border-b-0 lg:w-1/3 lg:border-b-0 p-8">
+          <div class="flex items-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20"
+              fill="currentColor" class="h-6 w-6 text-[#1769c2]">
+              <path
+                d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z">
+              </path>
+            </svg>
+            <div class="ml-4 text-xl text-white">Plateforme moderne</div>
+          </div>
+          <p class="leading-loose text-gray-400">
+            Interfaces intuitives, technologies à jour, performance optimisée : tout est pensé pour l’expérience utilisateur.
+          </p>
+        </div>
+
+        <div class="w-full md:w-1/2 lg:w-1/3 p-8">
+          <div class="flex items-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20"
+              fill="currentColor" class="h-6 w-6 text-[#1769c2]">
+              <path
+                d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13c0-1.398-.188-2.793-.688-4.094L26.688 13.5c.2.8.313 1.602.313 2.5 0 6.102-4.898 11-11 11S5 22.102 5 16 9.898 5 16 5c3 0 5.695 1.195 7.594 3.094L25 6.688C22.7 4.386 19.5 3 16 3zm11.281 4.281L16 18.563l-4.281-4.282-1.438 1.438 5 5 .719.687.719-.687 12-12z">
+              </path>
+            </svg>
+            <div class="ml-4 text-xl text-white">Intégrations natives</div>
+          </div>
+          <p class="leading-loose text-gray-400">
+            Compatibles avec les outils que vous utilisez déjà, pour une transition fluide et sans friction.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
   
-      <section class="bg-[#050e16] py-16 px-4 md:px-8" x-data="{
+      <section id="projets" class="bg-[#050e16] py-16 px-4 md:px-8" x-data="{
         documents: [
             {
                 id: 1,
@@ -945,7 +1060,7 @@
         this.expandedQuestions.clear();
     }
 }">
-    <div class="py-4 max-w-screen-lg mx-auto">
+    <div id="a-propos" class="py-4 max-w-screen-lg mx-auto">
        <div class="text-center mb-16">
             <p class="mt-4 text-sm leading-7 text-gray-400 font-regular">
                 QUESTIONS FRÉQUEMMENT POSÉES
@@ -1292,12 +1407,14 @@
         <!-- Section contact -->
         <div class="mt-16 px-4">
             <div class="bg-gradient-to-r from-[#178cbe] to-[#1769c2] rounded-2xl p-6 sm:p-8 md:p-12">
-                <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4">
+               <div class="flex items-center flex-col lg:text-center jutify-center">
+                 <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4">
                     Vous ne trouvez pas réponse à votre question ?
                 </h3>
-                <p class="text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base">
+                <p class="text-white/90 mb-6 sm:mb-8 max-w-2xl   text-sm sm:text-base">
                     Notre équipe est à votre disposition pour répondre à toutes vos interrogations et discuter de vos projets.
                 </p>
+               </div>
                 <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                     <button 
                         onclick="window.open('https://wa.me/242065609860?text=Bonjour,%20j\'aimerais%20en%20savoir%20plus%20sur%20vos%20services', '_blank')"
@@ -1375,16 +1492,16 @@
           <div class="block">
             <h6 class="text-lg font-medium text-white max-md:text-center mb-7">Services</h6>
             <ul class="flex flex-col max-md:items-center gap-6">
-              <li><a href="#"
+              <li><a href="#services"
                   class="text-base font-normal text-gray-400 transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">Développement
                   Web</a></li>
-              <li><a href="#"
+              <li><a href="#services"
                   class="text-base font-normal text-gray-400 transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">Solutions
                   Digitales</a></li>
               <li><a href="#"
                   class="text-base font-normal text-gray-400 transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">Sécurité
                   Informatique</a></li>
-              <li><a href="#"
+              <li><a href="#services"
                   class="text-base font-normal text-gray-400 transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">Consultation
                   Technologique</a></li>
             </ul>
@@ -1392,16 +1509,16 @@
           <div class="block">
             <h6 class="text-lg font-medium text-white max-md:text-center mb-7">Ressources</h6>
             <ul class="flex flex-col max-md:items-center gap-6">
-              <li><a href="#"
+              <li><a href="#a-propos"
                   class="text-base font-normal text-gray-400 transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">FAQs</a>
               </li>
-              <li><a href="#"
+              <li><a href="#projets"
                   class="text-base font-normal text-gray-400 transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">Documentation</a>
               </li>
-              <li><a href="#"
+              <li><a href="#projets"
                   class="text-base font-normal text-gray-400 transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">Guide
                   Utilisateur</a></li>
-              <li><a href="#"
+              <li><a href="#projets"
                   class="text-base font-normal text-gray-400 transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">Support
                   Technique</a></li>
             </ul>
@@ -1493,6 +1610,201 @@
     });
   </script>
 </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Bouton flottant -->
+<div id="chatclik" class="chat-float-btn" aria-label="Ouvrir le chat IA">
+  <svg  id="chatFloatBtn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+  </svg>
+</div>
+ 
+
+
+<!-- Bouton flottant -->
+<div 
+  x-data="{ open: false }"
+  class="fixed bottom-6 right-6 z-50">
+  <button 
+    @click="open = true"
+    class="w-14 h-14 rounded-full bg-gradient-to-r from-[#178cbe] to-[#1769c2] flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
+    aria-label="Ouvrir le chat IA">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+    </svg>
+  </button>
+
+  <!-- Modale de chat -->
+  <div 
+    x-show="open" 
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0 scale-90"
+    x-transition:enter-end="opacity-100 scale-100"
+    x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100 scale-100"
+    x-transition:leave-end="opacity-0 scale-90"
+    class="absolute bottom-20 right-0 w-[95vw] max-w-xs md:max-w-md bg-[#050e16] rounded-2xl shadow-2xl overflow-hidden laser-border"
+    @click.outside="open = false"
+    role="dialog"
+    aria-modal="true">
+    
+    <!-- En-tête -->
+    <div class="px-4 py-3 bg-gray-900 border-b border-gray-800 flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#1769c2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+      </svg>
+      <h3 class="text-white font-medium">Assistant Vision-It</h3>
+    </div>
+
+    <!-- Corps du chat -->
+    <div x-data="{
+      messages: [
+        { text: 'Bonjour ! 👋 Comment puis-je vous aider ?', sender: 'bot' }
+      ],
+      input: '',
+      isTyping: false,
+      sendMessage() {
+        if (!this.input.trim()) return;
+        this.messages.push({ text: this.input, sender: 'user' });
+        this.input = '';
+        this.isTyping = true;
+
+        setTimeout(() => {
+          this.isTyping = false;
+          const replies = [
+            'Merci pour votre message ! Vision-It vous accompagne dans votre transformation numérique.',
+            'Nos experts reviendront vers vous très vite.',
+            '💡 Intéressé par une solution sur mesure ? Parlez-nous de votre projet !'
+          ];
+          this.messages.push({ 
+            text: replies[Math.floor(Math.random() * replies.length)], 
+            sender: 'bot' 
+          });
+        }, 1800);
+      }
+    }" class="flex flex-col h-80">
+      <div class="flex-1 p-4 overflow-y-auto space-y-3">
+        <template x-for="msg in messages" :key="msg.text">
+          <div :class="{
+            'ml-auto bg-[#1769c2] text-white rounded-2xl px-4 py-2 max-w-[80%]': msg.sender === 'user',
+            'mr-auto bg-gray-800 text-gray-200 rounded-2xl px-4 py-2 max-w-[80%] laser-reveal': msg.sender === 'bot'
+          }" x-text="msg.text"></div>
+        </template>
+        <div x-show="isTyping" class="mr-auto flex gap-1">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+        </div>
+      </div>
+
+      <!-- Pied de page / input -->
+      <div class="border-t border-gray-800 p-3 flex gap-2">
+        <input 
+          type="text" 
+          x-model="input"
+          @keyup.enter="sendMessage()"
+          placeholder="Écrivez un message..."
+          class="flex-1 bg-gray-800 text-white rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#1769c2]"
+        />
+        <button 
+          @click="sendMessage()"
+          class="bg-[#1769c2] w-10 h-10 rounded-full flex items-center justify-center text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<style>
+  /* Effet laser sur la bordure */
+  .laser-border {
+    position: relative;
+  }
+  .laser-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(90deg, #1769c2, #178cbe, #05365f, #1769c2);
+    background-size: 300% 300%;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    animation: laserBorder 3s linear infinite;
+  }
+
+  @keyframes laserBorder {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+  }
+
+  /* Effet de chargement "laser" */
+  .typing-dot {
+    width: 8px;
+    height: 8px;
+    background: #1769c2;
+    border-radius: 50%;
+    animation: typingPulse 1.4s infinite ease-in-out;
+  }
+  .typing-dot:nth-child(1) { animation-delay: 0s; }
+  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes typingPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.4; }
+  }
+
+  /* Effet laser sur réponse finale */
+  @keyframes laserSweep {
+    0% { width: 0%; left: 0; }
+    100% { width: 100%; left: 0; }
+  }
+  .laser-reveal {
+    position: relative;
+    opacity: 0;
+    animation: laserReveal 0.6s forwards;
+  }
+  .laser-reveal::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #178cbe, #1769c2, transparent);
+    animation: laserSweep 1s forwards 0.3s;
+  }
+  @keyframes laserReveal {
+    to { opacity: 1; }
+  }
+</style>
+
+
+
+
 
   </body>
 </html>

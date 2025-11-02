@@ -273,6 +273,19 @@
       }
   </style>
 
+  <style>
+  /* Désactiver le double-tap zoom sur le slider */
+  .slider-container {
+    touch-action: pan-y;
+    user-select: none;
+  }
+  /* Meilleure gestion de la largeur */
+  .slider-item {
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
+</style>
+
 
 <style>
   /* Animation de pulsation fluide pour le loader */
@@ -292,6 +305,43 @@
   }
   .animate-ping {
     animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+</style>
+
+
+<style>
+  /* Effet laser au survol */
+  .nav-link {
+    position: relative;
+    display: inline-block;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #178cbe, #1769c2, transparent);
+    transition: width 0.4s ease, left 0.4s ease;
+  }
+  .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  /* Navbar collante avec transition */
+  .navbar-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; 
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .navbar-hidden {
+    transform: translateY(-100%);
   }
 </style>
 
@@ -317,29 +367,48 @@
         content: 'visionit.officiel@gmail.com'
       }
     ],
+
+
+
+  // --- SLIDER TOUCH ---
+  startX: 0,
+  endX: 0,
+  handleTouchStart(e) {
+    this.startX = e.touches[0].clientX;
+  },
+  handleTouchEnd(e) {
+    this.endX = e.changedTouches[0].clientX;
+    const diff = this.startX - this.endX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) this.nextSlide();
+      else this.prevSlide();
+    }
+  },
+
+
     openWhatsApp() {
       // Numéro WhatsApp avec code pays (sans le + pour l'API)
       const phoneNumber = '242065609860';
       const message = encodeURIComponent('Bonjour, je souhaite en savoir plus sur vos services.');
       window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
     },
-    nextSlide() {
-      if (this.currentSlide < this.contactInfo.length - 1) {
-        this.currentSlide++;
-      } else {
-        this.currentSlide = 0;
-      }
-    },
-    prevSlide() {
-      if (this.currentSlide > 0) {
-        this.currentSlide--;
-      } else {
-        this.currentSlide = this.contactInfo.length - 1;
-      }
-    },
-    goToSlide(index) {
-      this.currentSlide = index;
-    },
+   nextSlide() {
+    if (this.currentSlide < this.contactInfo.length - 1) {
+      this.currentSlide++;
+    } else {
+      this.currentSlide = 0;
+    }
+  },
+  prevSlide() {
+    if (this.currentSlide > 0) {
+      this.currentSlide--;
+    } else {
+      this.currentSlide = this.contactInfo.length - 1;
+    }
+  },
+  goToSlide(index) {
+    this.currentSlide = index;
+  },
     toggleMobileMenu() {
       this.mobileMenuOpen = !this.mobileMenuOpen;
       // Empêcher le défilement du corps lorsque le menu est ouvert
@@ -447,109 +516,148 @@
       </div>
     </div>
 
-    <header class="bg-[#050e16]">
-      <nav
-        class="flex mx-auto justify-between items-center max-w-[1300px] py-4 px-4 md:px-8"
-        role="navigation"
-        aria-label="Navigation principale">
-        <div class="flex items-center gap-3">
-          <img
-            class="h-20"
-            src="./img/logo/logo.png"
-            alt="Logo Vision-It - Technologie et innovation" />
-        </div>
-        <ul class="hidden sm:flex gap-3 md:gap-5 lg:gap-10">
-          <li
-            class="uppercase font-bold text-xs text-white hover:text-[#1769c2] transition-colors">
-            <a href="/" aria-label="Page d'accueil">ACCUEIL</a>
-          </li>
-          <li
-            class="uppercase font-bold text-xs text-white hover:text-[#1769c2] transition-colors">
-            <a href="#services" aria-label="Découvrir nos services">SERVICES</a>
-          </li>
-          <li
-            class="uppercase font-bold text-xs text-white hover:text-[#1769c2] transition-colors">
-            <a href="#projets" aria-label="Voir nos projets">PROJET</a>
-          </li>
-          <li
-            class="uppercase font-bold text-xs text-white hover:text-[#1769c2] transition-colors">
-            <a href="#a-propos" aria-label="En savoir plus sur Vision-It"
-              >EN SAVOIR PLUS SUR NOUS</a
-            >
-          </li>
-        </ul>
-        <div class="hidden sm:flex gap-3 md:gap-5 lg:gap-9">
-          <button
-            @click="openWhatsApp()"
-            class="btn-whatsapp uppercase font-bold text-xs rounded-[40px] py-1 px-3 md:py-2 lg:py-4 md:px-4 lg:px-9 text-white bg-gradient-to-r from-[#178cbe] to-[#1769c2] hover:opacity-90 transition-opacity"
-            aria-label="Nous contacter via WhatsApp">
-            Commencez
-          </button>
-        </div>
-        <button
-          @click="toggleMobileMenu()"
-          class="sm:hidden inline-block p-2"
-          aria-label="Ouvrir le menu">
-          <svg
-            width="33"
-            height="26"
-            viewBox="0 0 33 26"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <rect
-              width="33"
-              height="3.71429"
-              rx="1.85714"
-              fill="url(#paint0_linear_13_83)"></rect>
-            <rect
-              y="22.2857"
-              width="33"
-              height="3.71429"
-              rx="1.85714"
-              fill="url(#paint1_linear_13_83)"></rect>
-            <rect
-              x="9"
-              y="11.1429"
-              width="24"
-              height="3.71429"
-              rx="1.85714"
-              fill="url(#paint2_linear_13_83)"></rect>
-            <defs>
-              <linearGradient
-                id="paint0_linear_13_83"
-                x1="-8.62252e-09"
-                y1="3.46667"
-                x2="36.0395"
-                y2="3.46666"
-                gradientUnits="userSpaceOnUse">
-                <stop stop-color="#1769c2"></stop>
-                <stop offset="1" stop-color="#05365f"></stop>
-              </linearGradient>
-              <linearGradient
-                id="paint1_linear_13_83"
-                x1="-3.90789"
-                y1="26"
-                x2="33"
-                y2="26"
-                gradientUnits="userSpaceOnUse">
-                <stop stop-color="#1769c2"></stop>
-                <stop offset="1" stop-color="#05365f"></stop>
-              </linearGradient>
-              <linearGradient
-                id="paint2_linear_13_83"
-                x1="5.21062"
-                y1="13"
-                x2="33.0001"
-                y2="13"
-                gradientUnits="userSpaceOnUse">
-                <stop stop-color="#1769c2"></stop>
-                <stop offset="1" stop-color="#05365f"></stop>
-              </linearGradient>
-            </defs>
-          </svg>
-        </button>
-      </nav>
-    </header>
+    <!-- Header avec comportement scroll intelligent -->
+<header
+  x-data="{
+    lastScrollTop: 0,
+    navbarVisible: true,
+    init() {
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        if (scrollTop > 100) {
+          if (scrollTop > this.lastScrollTop) {
+            this.navbarVisible = false;
+          } else {
+            this.navbarVisible = true;
+          }
+        } else {
+          this.navbarVisible = true;
+        }
+        this.lastScrollTop = scrollTop;
+      });
+    }
+  }"
+  :class="{
+    'navbar-sticky': true,
+    'navbar-hidden': !navbarVisible
+  }"
+  class="backdrop-blur-lg ">
+  <nav
+    class="flex mx-auto justify-between items-center max-w-[1300px] py-4 px-4 md:px-8"
+    role="navigation"
+    aria-label="Navigation principale">
+    <div class="flex items-center gap-3">
+      <img
+        class="h-20"
+        src="./img/logo/logo.png"
+        alt="Logo Vision-It - Technologie et innovation" />
+    </div>
+    <ul class="hidden sm:flex gap-3 md:gap-5 lg:gap-10">
+      <li>
+        <a
+          href="/"
+          class="uppercase font-bold text-xs text-white nav-link transition-colors"
+          aria-label="Page d'accueil">
+          ACCUEIL
+        </a>
+      </li>
+      <li>
+        <a
+          href="#services"
+          class="uppercase font-bold text-xs text-white nav-link transition-colors"
+          aria-label="Découvrir nos services">
+          SERVICES
+        </a>
+      </li>
+      <li>
+        <a
+          href="#projets"
+          class="uppercase font-bold text-xs text-white nav-link transition-colors"
+          aria-label="Voir nos projets">
+          PROJET
+        </a>
+      </li>
+      <li>
+        <a
+          href="#a-propos"
+          class="uppercase font-bold text-xs text-white nav-link transition-colors"
+          aria-label="En savoir plus sur Vision-It">
+          EN SAVOIR PLUS SUR NOUS
+        </a>
+      </li>
+    </ul>
+    <div class="hidden sm:flex gap-3 md:gap-5 lg:gap-9">
+      <button
+        @click="openWhatsApp()"
+        class="btn-whatsapp uppercase font-bold text-xs rounded-[40px] py-1 px-3 md:py-2 lg:py-4 md:px-4 lg:px-9 text-white bg-gradient-to-r from-[#178cbe] to-[#1769c2] hover:opacity-90 transition-opacity"
+        aria-label="Nous contacter via WhatsApp">
+        Commencez
+      </button>
+    </div>
+    <button
+      @click="toggleMobileMenu()"
+      class="sm:hidden inline-block p-2"
+      aria-label="Ouvrir le menu">
+      <svg
+        width="33"
+        height="26"
+        viewBox="0 0 33 26"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <rect
+          width="33"
+          height="3.71429"
+          rx="1.85714"
+          fill="url(#paint0_linear_13_83)"></rect>
+        <rect
+          y="22.2857"
+          width="33"
+          height="3.71429"
+          rx="1.85714"
+          fill="url(#paint1_linear_13_83)"></rect>
+        <rect
+          x="9"
+          y="11.1429"
+          width="24"
+          height="3.71429"
+          rx="1.85714"
+          fill="url(#paint2_linear_13_83)"></rect>
+        <defs>
+          <linearGradient
+            id="paint0_linear_13_83"
+            x1="-8.62252e-09"
+            y1="3.46667"
+            x2="36.0395"
+            y2="3.46666"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#1769c2"></stop>
+            <stop offset="1" stop-color="#05365f"></stop>
+          </linearGradient>
+          <linearGradient
+            id="paint1_linear_13_83"
+            x1="-3.90789"
+            y1="26"
+            x2="33"
+            y2="26"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#1769c2"></stop>
+            <stop offset="1" stop-color="#05365f"></stop>
+          </linearGradient>
+          <linearGradient
+            id="paint2_linear_13_83"
+            x1="5.21062"
+            y1="13"
+            x2="33.0001"
+            y2="13"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#1769c2"></stop>
+            <stop offset="1" stop-color="#05365f"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+    </button>
+  </nav>
+</header>
 
     <main>
       <section
@@ -689,105 +797,75 @@
           </div>
         </div>
 
-        <!-- Section des informations de contact avec slider pour mobile -->
-        <section
-          class="sm:hidden relative"
-          aria-label="Informations de contact">
-          <div
-            class="flex relative z-30 justify-center items-center mt-6 mx-auto max-w-[1300px] rounded-[90px] py-3 px-3 bg-gradient-to-r from-[#003366b8] via-[#178abe] to-[#179bbb]">
-            <!-- Bouton précédent -->
-            <button
-              @click="prevSlide()"
-              class="flex-none p-2 text-white hover:opacity-80 transition-opacity"
-              aria-label="Informations précédentes">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M14.5 18.25L8.25 12L14.5 5.75M0.75 12C0.75 18.2132 5.7868 23.25 12 23.25C18.2132 23.25 23.25 18.2132 23.25 12C23.25 5.7868 18.2132 0.75 12 0.75C5.7868 0.75 0.75 5.7868 0.75 12Z"
-                  stroke="white"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"></path>
-              </svg>
-            </button>
+       <!-- Section des informations de contact avec slider tactile -->
+      <section class="sm:hidden relative" aria-label="Informations de contact">
+        <div class="flex relative z-30 justify-center items-center mt-6 mx-auto max-w-[1300px] rounded-[90px] py-3 px-3 bg-gradient-to-r from-[#003366b8] via-[#178abe] to-[#179bbb]">
+          <!-- Icône Précédent (plus claire) -->
+          <button @click="prevSlide()" class="flex-none p-2 text-white hover:opacity-80 transition-opacity" aria-label="Informations précédentes">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
 
-            <!-- Slider pour les informations de contact -->
-            <div class="slider-container flex-1 overflow-hidden">
-              <div
-                class="slider-wrapper"
-                :style="`transform: translateX(-${currentSlide * 100}%)`">
-                <template x-for="(info, index) in contactInfo" :key="index">
-                  <div
-                    class="slider-item flex gap-4 px-4"
-                    itemscope
-                    itemtype="http://schema.org/ContactPoint">
-                    <div class="flex-none">
-                      <svg
-                        width="42"
-                        height="63"
-                        viewBox="0 0 42 63"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          :d="info.icon"
-                          fill="#FFFFFF"></path>
+          <!-- Slider tactile -->
+          <div 
+            class="slider-container flex-1 overflow-hidden px-2"
+            @touchstart="handleTouchStart"
+            @touchend="handleTouchEnd">
+            <div 
+              class="slider-wrapper flex transition-transform duration-300 ease-out"
+              :style="`transform: translateX(-${currentSlide * 100}%)`">
+              <template x-for="(info, index) in contactInfo" :key="index">
+                <div class="slider-item flex-shrink-0 w-full flex items-center gap-3 px-2">
+                  <!-- Icône moderne -->
+                  <div class="flex-none w-10 h-10 flex items-center justify-center rounded-full bg-white/20">
+                    <template x-if="info.title === 'Localisation'">
+                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                       </svg>
-                    </div>
-                    <div class="text-white">
-                      <h2
-                        class="text-lg font-bold"
-                        x-text="info.title"
-                        itemprop="contactType"></h2>
-                      <p
-                        class="text-sm mt-1"
-                        x-text="info.content"
-                        itemprop="text"></p>
-                    </div>
+                    </template>
+                    <template x-if="info.title === 'Appelez-nous'">
+                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                      </svg>
+                    </template>
+                    <template x-if="info.title === 'Notre Email'">
+                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                      </svg>
+                    </template>
                   </div>
-                </template>
-              </div>
+                  <div class="text-white truncate">
+                    <h2 class="text-base font-bold truncate" x-text="info.title"></h2>
+                    <p class="text-xs mt-0.5 opacity-90 truncate" x-text="info.content"></p>
+                  </div>
+                </div>
+              </template>
             </div>
+          </div>
 
-            <!-- Bouton suivant -->
+          <!-- Icône Suivant -->
+          <button @click="nextSlide()" class="flex-none p-2 text-white hover:opacity-80 transition-opacity" aria-label="Informations suivantes">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Indicateurs -->
+        <div class="flex justify-center mt-3 gap-2" role="tablist">
+          <template x-for="(info, index) in contactInfo" :key="index">
             <button
-              @click="nextSlide()"
-              class="flex-none p-2 text-white hover:opacity-80 transition-opacity"
-              aria-label="Informations suivantes">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M9.5 18.25L15.75 12L9.5 5.75M23.25 12C23.25 18.2132 18.2132 23.25 12 23.25C5.7868 23.25 0.75 18.2132 0.75 12C0.75 5.7868 5.7868 0.75 12 0.75C18.2132 0.75 23.25 5.7868 23.25 12Z"
-                  stroke="white"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"></path>
-              </svg>
-            </button>
-          </div>
-
-          <!-- Indicateurs de position du slider -->
-          <div class="flex justify-center mt-3 gap-2" role="tablist">
-            <template x-for="(info, index) in contactInfo" :key="index">
-              <button
-                @click="goToSlide(index)"
-                :class="currentSlide === index ? 'bg-white w-6' : 'bg-white bg-opacity-50 w-2'"
-                class="slider-dot h-2 rounded-full transition-all duration-300"
-                :aria-label="`Afficher ${info.title}`"
-                :aria-selected="currentSlide === index"
-                role="tab"></button>
-            </template>
-          </div>
-        </section>
+              @click="goToSlide(index)"
+              :class="currentSlide === index ? 'bg-white w-6' : 'bg-white bg-opacity-50 w-2'"
+              class="slider-dot h-2 rounded-full transition-all duration-300"
+              :aria-label="`Afficher ${info.title}`"
+              :aria-selected="currentSlide === index"
+              role="tab"></button>
+          </template>
+        </div>
+      </section>
 
         <!-- Version desktop de la section des informations de contact -->
         <section

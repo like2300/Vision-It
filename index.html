@@ -58,12 +58,12 @@
     <!-- Préchargement des ressources critiques -->
     <link rel="preload" href="./img/logo/logo.png" as="image" />
     <link rel="preload" href="https://cdn.tailwindcss.com" as="style" />
-    <link rel="preload" href="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" as="script" />
+    <link rel="preload" href="./alpine.js" as="script" />
     
     <!-- cdn tailwindcss alpine -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwindcss.js"></script>
     <script
-      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+      src="./alpine.js"
       defer></script>
     <style>
       /* Styles personnalisés */
@@ -545,33 +545,192 @@
           </div>
         </section>
       </section>
+
+
+
+
+
+
+
+
     </main>
     
-    <footer class="bg-[#050e16] text-white py-8 px-4 md:px-8">
-      <div class="max-w-[1300px] mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="mb-4 md:mb-0">
-            <p>&copy; 2023 Vision-It. Tous droits réservés.</p>
+
+
+
+<footer class="pt-16 pb-7 bg-[#050e16]">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 max-lg:gap-10 lg:grid-cols-12 lg:divide-x-2 divide-gray-700 pb-10 lg:pb-14 border-b-2 border-gray-700">
+      <div class="lg:col-span-7 pr-9 xl:pr-16">
+        <h5 class="text-lg font-medium text-white max-md:text-center mb-7">Contact</h5>
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-2 pb-12 border-b-2 border-gray-700">
+          <div class="flex flex-col md:flex-row min-[1024px]:flex-col min-[1160px]:flex-row items-center gap-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path
+                d="M10.0002 1.83398C7.79102 1.83398 6.00016 3.62485 6.00016 5.83398C6.00016 7.81598 7.44169 9.46129 9.3335 9.77868V11.8438C8.15165 11.8773 6.58573 12.0034 5.21484 12.3198C4.3956 12.5089 3.59344 12.7773 2.98057 13.1696C2.3658 13.5632 1.8335 14.1587 1.8335 15.0007C1.8335 15.4261 2.03957 15.8389 2.35737 16.1901C2.68091 16.5477 3.15401 16.8824 3.78679 17.1701C5.05045 17.7444 7.02988 18.1673 10.0002 18.1673C11.2802 18.1673 13.2118 18.0404 14.8432 17.6489C15.6539 17.4543 16.4414 17.1828 17.0417 16.795C17.6411 16.4076 18.1668 15.8234 18.1668 15.0007C18.1668 14.3531 17.7301 13.63 16.8682 13.0593C15.9939 12.4806 14.6234 12.0086 12.5555 11.8363C12.1886 11.8057 11.8664 12.0784 11.8358 12.4453C11.8052 12.8122 12.0779 13.1344 12.4448 13.165C14.3769 13.326 15.5064 13.7569 16.1321 14.1711C16.7702 14.5936 16.8335 14.9538 16.8335 15.0007C16.8335 15.1779 16.7342 15.4062 16.318 15.6751C15.9026 15.9435 15.2839 16.172 14.5321 16.3524C13.0385 16.7109 11.2202 16.834 10.0002 16.834C7.13711 16.834 5.36654 16.4235 4.33853 15.9562C3.82549 15.723 3.51733 15.4848 3.34608 15.2956C3.18432 15.1168 3.16835 15.0108 3.16683 15.0007C3.16683 14.8009 3.27689 14.5631 3.69944 14.2926C4.1239 14.0209 4.75403 13.7945 5.51465 13.619C6.75956 13.3317 8.21367 13.2112 9.3335 13.1777V13.334C9.3335 13.7022 9.63197 14.0007 10.0002 14.0007C10.3684 14.0007 10.6668 13.7022 10.6668 13.334V9.77868C12.5586 9.46129 14.0002 7.81598 14.0002 5.83398C14.0002 3.62485 12.2093 1.83398 10.0002 1.83398Z"
+                fill="#1769c2" />
+            </svg>
+            <p class="text-base font-normal text-gray-400">Brazzaville, Congo</p>
           </div>
-          <div class="flex gap-4">
-            <a href="#" aria-label="Facebook" class="hover:text-[#1769c2] transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="Twitter" class="hover:text-[#1769c2] transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="LinkedIn" class="hover:text-[#1769c2] transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </a>
+          <div class="flex flex-col md:flex-row min-[1024px]:flex-col min-[1160px]:flex-row items-center gap-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+              <path
+                d="M7.18848 2.51372C6.28217 1.60741 4.81275 1.60741 3.90644 2.51372C2.03119 4.38896 2.03119 7.42934 3.90644 9.30459L11.3627 16.7609C13.238 18.6361 16.2784 18.6361 18.1536 16.7609C19.0599 15.8546 19.0599 14.3852 18.1536 13.4788L16.0824 11.4077C15.351 10.6763 14.1653 10.6763 13.4339 11.4077C13.2233 11.6183 12.8817 11.6183 12.671 11.4077L8.91853 7.65514C8.70787 7.44448 8.70787 7.10293 8.91853 6.89227C9.64989 6.1609 9.64989 4.97513 8.91853 4.24377L7.18848 2.51372Z"
+                fill="#1769c2" />
+            </svg>
+            <a href="tel:+242065609860" class="text-base font-normal text-gray-400 select-all hover:text-[#1769c2] transition-colors">(+242) 06 560 98 60</a>
+          </div>
+          <div class="flex flex-col md:flex-row min-[1024px]:flex-col min-[1160px]:flex-row items-center gap-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+              <path
+                d="M0.980369 2.24792C1.71093 1.28666 2.86648 0.666016 4.16699 0.666016H12.5003C13.7782 0.666016 14.9162 1.26527 15.6485 2.19809C15.6369 2.2106 15.6257 2.22364 15.615 2.23721L14.8684 3.18004L13.1551 5.20653C12.1329 6.41561 11.7452 6.85169 11.2425 7.08496C10.7399 7.31822 10.1565 7.33272 8.57326 7.33273H8.09451C6.51086 7.33271 5.92743 7.31822 5.42467 7.08486C4.92191 6.8515 4.53424 6.41525 3.51199 5.20572L1.80012 3.18021L1.79155 3.17028L0.980369 2.24792Z"
+                fill="#1769c2" />
+              <path
+                d="M0.331033 3.52856C0.224291 3.88909 0.166992 4.27086 0.166992 4.66602V11.3327C0.166992 13.5418 1.95785 15.3327 4.16699 15.3327H12.5003C14.7095 15.3327 16.5003 13.5418 16.5003 11.3327V4.66602C16.5003 4.25643 16.4388 3.86122 16.3244 3.48914L15.9071 4.01614C15.9027 4.02173 15.8981 4.02725 15.8935 4.0327L14.0746 6.18411C13.1883 7.23323 12.6064 7.92194 11.8038 8.29441C11.0011 8.66689 10.0995 8.66657 8.7261 8.6661L7.94163 8.6661C6.56792 8.66657 5.66611 8.66688 4.86332 8.29426C4.06053 7.92164 3.47866 7.23268 2.5923 6.18317L0.786009 4.04589L0.331033 3.52856Z"
+                fill="#1769c2" />
+            </svg>
+            <a href="mailto:visionit.officiel@gmail.com" class="text-base font-normal text-gray-400 select-all hover:text-[#1769c2] transition-colors">visionit.officiel@gmail.com</a>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center max-lg:justify-between gap-8 lg:gap-14 xl:gap-24 pt-14">
+          <div class="block">
+            <h6 class="text-lg font-medium text-white mb-7 max-md:text-center">Vision-It</h6>
+            <ul class="flex flex-col max-md:items-center gap-6">
+              <li><a href="#"
+                  class="text-base font-normal text-gray-400 max-md:text-center transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">Accueil</a>
+              </li>
+              <li><a href="#services"
+                  class="text-base font-normal text-gray-400 max-md:text-center transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">Services</a>
+              </li>
+              <li><a href="#projets"
+                  class="text-base font-normal text-gray-400 max-md:text-center transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">Projets</a>
+              </li>
+              <li><a href="#a-propos"
+                  class="text-base font-normal text-gray-400 max-md:text-center transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">À Propos</a>
+              </li>
+            </ul>
+          </div>
+          <div class="block">
+            <h6 class="text-lg font-medium text-white max-md:text-center mb-7">Services</h6>
+            <ul class="flex flex-col max-md:items-center gap-6">
+              <li><a href="#"
+                  class="text-base font-normal text-gray-400 transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">Développement
+                  Web</a></li>
+              <li><a href="#"
+                  class="text-base font-normal text-gray-400 transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">Solutions
+                  Digitales</a></li>
+              <li><a href="#"
+                  class="text-base font-normal text-gray-400 transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">Sécurité
+                  Informatique</a></li>
+              <li><a href="#"
+                  class="text-base font-normal text-gray-400 transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">Consultation
+                  Technologique</a></li>
+            </ul>
+          </div>
+          <div class="block">
+            <h6 class="text-lg font-medium text-white max-md:text-center mb-7">Ressources</h6>
+            <ul class="flex flex-col max-md:items-center gap-6">
+              <li><a href="#"
+                  class="text-base font-normal text-gray-400 transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">FAQs</a>
+              </li>
+              <li><a href="#"
+                  class="text-base font-normal text-gray-400 transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">Documentation</a>
+              </li>
+              <li><a href="#"
+                  class="text-base font-normal text-gray-400 transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">Guide
+                  Utilisateur</a></li>
+              <li><a href="#"
+                  class="text-base font-normal text-gray-400 transition-all duration-300 hover:text-[#1769c2] focus-within:outline-0 focus-within:text-[#1769c2]">Support
+                  Technique</a></li>
+            </ul>
           </div>
         </div>
       </div>
-    </footer>
+
+      <div class="lg:col-span-5 lg:pl-9 xl:pl-16 col-start-1 max-lg:row-start-1">
+        <a href="#" class="mb-9 max-md:mx-auto max-md:flex max-md:w-full items-center justify-center">
+          <div class="flex items-center gap-3">
+            <img class="h-12" src="./img/logo/logo.png" alt="Logo Vision-It" />
+            <span class="text-xl font-bold text-[#1769c2]">Vision-It</span>
+          </div>
+        </a>
+        <h2 class="font-semibold text-2xl max-md:text-center leading-9 text-white mt-9 mb-5">Rejoignez Notre Newsletter Pour Des Mises À Jour Exclusives</h2>
+        <p class="text-base font-normal text-gray-400 max-md:text-center mb-8">Abonnez-vous à notre newsletter exclusive pour les dernières nouvelles et offres</p>
+        <form name="contact" netlify  class="relative max-w-xs max-md:max-w-full max-md:mx-auto text-gray-400 focus-within:text-gray-900 mb-5">
+          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path
+                d="M2.95739 5.61072L6.47281 7.80147C8.18826 8.87052 9.04599 9.40504 9.99991 9.40489C10.9538 9.40474 11.8114 8.86994 13.5265 7.80035L17.0509 5.60245M9.16667 16.6663H10.8333C13.976 16.6663 15.5474 16.6663 16.5237 15.69C17.5 14.7137 17.5 13.1424 17.5 9.99967C17.5 6.85698 17.5 5.28563 16.5237 4.30932C15.5474 3.33301 13.976 3.33301 10.8333 3.33301H9.16667C6.02397 3.33301 4.45262 3.33301 3.47631 4.30932C2.5 5.28563 2.5 6.85698 2.5 9.99967C2.5 13.1424 2.5 14.7137 3.47631 15.69C4.45262 16.6663 6.02397 16.6663 9.16667 16.6663Z"
+                stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <input type="email" id="newsletter-email" name="email"
+            class="block w-full md:max-w-xs pr-4 pl-12 py-2.5 text-base
+             font-normal shadow-xs text-white bg-transparent border 
+             border-gray-600 rounded-full placeholder-gray-400 
+             focus:outline-none leading-relaxed focus:border-[#1769c2]"
+            placeholder="votre@email.com">
+        </form>
+        <button
+          class="py-2.5 px-7 max-md:w-full max-md:text-center rounded-full max-md:mx-auto flex items-center justify-center bg-gradient-to-r from-[#178cbe] to-[#1769c2] text-base font-semibold text-white mb-8 transition-all duration-500 hover:opacity-90">S'abonner</button>
+        <div class="flex items-center max-md:justify-center gap-5">
+          <a href="https://www.facebook.com/profile.php?id=61582588155272" target="_blank" rel="noopener noreferrer"
+            class="p-2 text-white rounded-full transition-all duration-500 hover:bg-[#178cbe] focus-within:bg-[#178cbe] focus-within:outline-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://cg.linkedin.com/in/visionit-officiel-4766b3390" target="_blank" rel="noopener noreferrer"
+            class="p-2 h-10 w-10 flex items-center justify-center text-white rounded-full transition-all duration-500 hover:bg-[#178cbe] focus-within:outline-0 focus-within:bg-[#178cbe]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 18 18" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://vm.tiktok.com/ZMHvGcTjEgJgM-UhTOJ/" target="_blank" rel="noopener noreferrer"
+            class="p-2 text-white rounded-full transition-all duration-500 hover:bg-[#178cbe] focus-within:bg-[#178cbe] focus-within:outline-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/242065609860" target="_blank" rel="noopener noreferrer"
+            class="p-2 text-white group rounded-full transition-all duration-500 hover:bg-[#25D366] focus-within:bg-[#25D366] focus-within:outline-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+          </a>
+          <a href="mailto:visionit.officiel@gmail.com"
+            class="p-2 text-white rounded-full transition-all duration-500 hover:bg-red-600 focus-within:bg-red-600 focus-within:outline-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="flex items-center justify-center pt-7">
+      <p class="text-sm font-normal text-gray-400">© Vision-It <span id="current-year"></span>, Tous droits réservés.</p>
+    </div>
+  </div>
+
+  <!-- Script pour l'année dynamique -->
+  <script>
+    // Récupérer l'année actuelle et l'afficher
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Gestion de la soumission du formulaire de newsletter
+    document.querySelector('button').addEventListener('click', function() {
+      const email = document.getElementById('newsletter-email').value;
+      if (email && email.includes('@')) {
+        // Simuler l'envoi du formulaire
+        alert('Merci pour votre abonnement! Vous recevrez bientôt nos dernières nouvelles.');
+        document.getElementById('newsletter-email').value = '';
+      } else {
+        alert('Veuillez entrer une adresse email valide.');
+      }
+    });
+  </script>
+</footer>
+
   </body>
 </html>
